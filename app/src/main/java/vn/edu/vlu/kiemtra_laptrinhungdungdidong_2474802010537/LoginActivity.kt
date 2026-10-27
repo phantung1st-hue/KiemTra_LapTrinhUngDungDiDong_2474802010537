@@ -1,5 +1,7 @@
 package vn.edu.vlu.kiemtra_laptrinhungdungdidong_2474802010537
 
+import android.content.Intent
+
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Button
@@ -49,6 +51,11 @@ class LoginActivity : AppCompatActivity() {
 
                 else -> {
                     tvStatus.text = "Xác thực thành công!"
+
+                    val intent = Intent(this@LoginActivity, ProfileActivity::class.java)
+                    intent.putExtra("EMAIL", email)
+                    startActivity(intent)
+
                 }
             }
         }
